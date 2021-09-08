@@ -10,12 +10,12 @@ I have used following dataset for this project:
 
 `https://www.kaggle.com/abhinavwalia95/entity-annotated-corpus`
 
-***
+
 
 
 ## Installation Guidelines
 
-***
+
 - Clone the repository
 
 
@@ -48,7 +48,7 @@ I have used following dataset for this project:
 
 ## Project Guidelines
 
-***
+
 1. Convert your dataset .csv file to .tsv file
 
 
