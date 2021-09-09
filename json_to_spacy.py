@@ -1,16 +1,12 @@
-# Convert json file to spaCy format.
-import plac
 import logging
-import argparse
-import sys
-import os
 import json
 import pickle
 
-@plac.annotations(input_file=("Input file", "option", "i", str), output_file=("Output file", "option", "o", str))
 
-
-def main(input_file=None, output_file=None):
+def json_to_spacy(input_file, output_file):
+    """
+    Convert json file to spaCy format.
+    """
     try:
         training_data = []
         lines=[]
@@ -30,7 +26,6 @@ def main(input_file=None, output_file=None):
                 for label in labels:
                     entities.append((point['start'], point['end'] + 1 ,label))
 
-
             training_data.append((text, {"entities" : entities}))
 
         print(training_data)
@@ -44,4 +39,6 @@ def main(input_file=None, output_file=None):
 
 
 if __name__ == '__main__':
-    plac.call(main)
+    input_file = "Data/ner_corpus_260.json"
+    output_file = "Data/ner_corpus_260"
+    json_to_spacy(input_file, output_file)
